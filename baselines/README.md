@@ -18,9 +18,12 @@ Sogou query log is not published now. Therefore, we evaluate K-NRM and Conv-KNRM
 
 ### Pretrained Word Embeddings
 
+```
 wget http://nlp.stanford.edu/data/glove.840B.300d.zip -P data/glove
+```
+```
 unzip -o -d data/glove/ data/glove/glove.840B.300d.zip
-
+```
 ### WikiQA Preprocess
 **Note**: dowload \"WikiQACorpus.zip\" to the path "./data/raw_data/WikiQA/".
 >WikiQACorpus.zip download link: https://www.microsoft.com/en-us/download/details.aspx?id=52419
