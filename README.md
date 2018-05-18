@@ -23,12 +23,12 @@ The ranking results. All results are in trec format.
 
 
 
-| Method | Testing-SAME (NDCG\@1) | Testing-SAME (NDCG\@1)| Testing-DIFF (NDCG\@1)| Testing-DIFF (NDCG\@1)| Testing-RAW (MRR)|
-| --------   | --------   | --------   | --------  |--------   | -------- |
-|K-NRM|0.2645|0.4197|0.3000|0.4228|0.3447|
-|Conv-KNRM|0.3357|0.4810|0.3384|0.4318|0.3582|
-|EDRM-KNRM|0.3096|0.4547|0.3327|0.4341|0.3616|
-|EDRM-CKNRM	|0.3397|0.4821|0.3708|0.4513|0.3892|
+| Method | Testing\-SAME \(NDCG@1\) | Testing\-SAME \(NDCG@10\)| Testing\-DIFF \(NDCG@1\)| Testing\-DIFF \(NDCG@10\)|  Testing\-RAW \(MRR\)|
+| --------  | -------- | --------  | --------  |  --------  | --------  |
+|K\-NRM|0\.2645|0\.4197|0\.3000|0\.4228|0\.3447|
+|Conv\-KNRM|0\.3357|0\.4810|0\.3384|0\.4318|0\.3582|
+|EDRM\-KNRM|0\.3096|0\.4547|0\.3327|0\.4341|0\.3616|
+|EDRM\-CKNRM	|0\.3397|0\.4821|0\.3708|0\.4513|0\.3892|
 
 
 ## Citation
