@@ -11,7 +11,7 @@ There are code for our main baseline K-NRM and Conv-KNRM:
 
 ## EDRM
 
-There are codes for our work based on Conv-KNRM. And the same experimnts parameters can be found in K-NRM paper.
+There are codes for our work based on Conv-KNRM.
 
 
 ## Results
