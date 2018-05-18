@@ -9,5 +9,5 @@ The same experiment setting can be found in K-NRM paper. The sogou query log is 
 
 ### Knowledge Graph
 
-We use [CN-DBpedia] (http://kw.fudan.edu.cn/cndbpedia/intro/) in this experiments. You can download this resource from [here] (http://openkg.cn/dataset/cndbpedia).
+We use [CN-DBpedia](http://kw.fudan.edu.cn/cndbpedia/intro/) in this experiments. You can download this resource from [here](http://openkg.cn/dataset/cndbpedia).
 
