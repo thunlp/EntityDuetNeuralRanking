@@ -1,4 +1,4 @@
-# EntityDuetNeuralRanking
+# Entity-Duet Neural Ranking Model
 There are source codes for Entity-Duet Neural Ranking Model (EDRM).
 
 
