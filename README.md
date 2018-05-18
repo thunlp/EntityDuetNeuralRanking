@@ -1,5 +1,7 @@
 # EntityDuetNeuralRanking
 There are source codes for Entity-Duet Neural Ranking Model (EDRM).
+
+
 ![model](https://github.com/thunlp/EntityDuetNeuralRanking/blob/master/model.png)
 
 ## Baselines
@@ -21,37 +23,13 @@ The ranking results. All results are in trec format.
 
 
 
-| |Testing-SAME | Testing-DIFF | Testing-RAW|
-| --------   | --------   | --------   | --------  |
+| Testing-SAME (NDCG@1) | Testing-SAME (NDCG@1)| Testing-DIFF (NDCG@1)| Testing-DIFF (NDCG@1)| Testing-RAW (MRR)|
+| --------   | --------   | --------   | --------  |--------   | --------  |
 |K-NRM|0.2645|0.4197|0.3000|0.4228|0.3447|
+|Conv-KNRM|0.3357|0.4810|0.3384|0.4318|0.3582|
+|EDRM-KNRM|0.3096|0.4547|0.3327|0.4341|0.3616|
+|EDRM-CKNRM	|0.3397|0.4821|0.3708|0.4513|0.3892|
 
-
-\texttt{Conv-KNRM}	
-& ${0.3357}^{\dagger \ddagger \mathsection \mathparagraph }$ & $ +26.90\%  $
-& ${0.4810}^{\dagger \ddagger \mathsection \mathparagraph }$ & $ +14.59\%  $
-& ${0.3384}^{\dagger \ddagger \mathsection \mathparagraph }$ & $ +12.81\%  $
-& ${0.4318}^{\dagger \ddagger \mathsection }$ & $ +2.14\%  $
-& ${0.3582}^{\dagger \ddagger \mathsection }$ & $ +3.91\%  $\\
-\hline
-
-\texttt{EDRM-KNRM}	
-& ${0.3096}^{\dagger \ddagger \mathsection \mathparagraph }$ & $ +17.04\%  $
-& ${0.4547}^{\dagger \ddagger \mathsection \mathparagraph }$ & $ +8.32\%  $
-& ${0.3327}^{\dagger \ddagger \mathsection \mathparagraph }$ & $ +10.92\%  $
-& ${0.4341}^{\dagger \ddagger \mathsection \mathparagraph }$ & $ +2.68\%  $
-& ${0.3616}^{\dagger \ddagger \mathsection \mathparagraph }$ & $ +4.90\% $  \\
-
-
-\texttt{EDRM-CKNRM}	
-& $\textbf{0.3397}^{\dagger \ddagger \mathsection \mathparagraph }$ & $ +28.42\%  $
-& $\textbf{0.4821}^{\dagger \ddagger \mathsection \mathparagraph }$ & $ +14.86\%  $
-& $\textbf{0.3708}^{\dagger \ddagger \mathsection \mathparagraph * }$ & $ +23.60\%  $
-& $\textbf{0.4513}^{\dagger \ddagger \mathsection \mathparagraph * }$ & $ +6.74\%  $
-& $\textbf{0.3892}^{\dagger \ddagger \mathsection \mathparagraph * }$ & $ +12.90\%  $ \\
-
-\hline 
-\end{tabular}}
-\end{table*}
 
 ## Citation
 ```
