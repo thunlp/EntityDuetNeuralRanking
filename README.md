@@ -1,6 +1,6 @@
 # EntityDuetNeuralRanking
 There are source codes for Entity-Duet Neural Ranking Model (EDRM).
-[image]: https://github.com/thunlp/EntityDuetNeuralRanking/blob/master/model.png
+![model](https://github.com/thunlp/EntityDuetNeuralRanking/blob/master/model.png)
 
 ## Baselines
 
