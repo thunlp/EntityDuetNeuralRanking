@@ -6,7 +6,7 @@ There are source codes for Entity-Duet Neural Ranking Model (EDRM).
 
 ## Baselines
 
-There are code for our main baseline K-NRM and Conv-KNRM:
+There are codes for our main baselines: K-NRM and Conv-KNRM.
 
 - [End-to-end neural ad-hoc ranking with kernel pooling](http://www.cs.cmu.edu/afs/cs/user/cx/www/papers/K-NRM.pdf)
 - [Convolutional Neural Networks for Soft-Matching N-Grams in Ad-hoc Search](http://www.cs.cmu.edu/~zhuyund/papers/WSDM_2018_Dai.pdf)
