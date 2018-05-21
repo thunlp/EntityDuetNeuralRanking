@@ -74,7 +74,7 @@ Development Set:
 
 |           | WikiQA   |  TrecQA (all)  |   TrecQA (clean) |  
 | --------  | -------- | --------  | --------  |
-| K-NRM     | mrr 0.697134; map 0.690313 |  mrr 0.887622; map 0.797774 | mrr 0.887622; map 0.797774 |
+| K-NRM     | mrr 0.697134; map 0.690313 |  mrr 0.887622; map 0.797774 | mrr 0.814342; map 0.737469	 |
 | Conv-KNRM | mrr 0.743666; map 0.727295 |  mrr 0.811153; map 0.759652 | mrr 0.755000; map 0.699610 |
 
 
