@@ -5,7 +5,7 @@
 
 ### Training and Testing Data
 
-The same experiment setting can be found in K-NRM paper. The sogou query log is not avaliable now, we will release our data after they are released.
+The same experiment setting can be found in K-NRM paper. We will release our data after the sogou query log is released.
 
 ### Knowledge Graph
 
