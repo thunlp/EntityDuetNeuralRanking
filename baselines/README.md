@@ -88,5 +88,3 @@ Testing Set:
 
 
 
-## Copyright
-All Rights Reserved.
