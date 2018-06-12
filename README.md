@@ -32,13 +32,8 @@ The ranking results. All results are in trec format.
 
 
 ## Citation
-```
-Entity-Duet Neural Ranking: Understanding the Role of Knowledge Graph Semantics in Neural Information Retrieval. Zhenghao Liu, Chenyan Xiong, Maosong Sun and Zhiyuan Liu.
-```
 
-## Copyright
-
-All Rights Reserved.
+Entity-Duet Neural Ranking: Understanding the Role of Knowledge Graph Semantics in Neural Information Retrieval. Zhenghao Liu, Chenyan Xiong, Maosong Sun and Zhiyuan Liu. In Proceedings of ACL.
 
 
 ## Contact
