@@ -87,4 +87,5 @@ Testing Set:
 | Conv-KNRM | mrr 0.663512; map 0.650243 |  mrr 0.789182; map 0.726721 | mrr 0.799825; map 0.709013 |
 
 
+## MS-MARCO reault for paragraph ranking -[http://www.msmarco.org/leaders.aspx]
 
