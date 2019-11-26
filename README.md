@@ -31,6 +31,23 @@ The ranking results. All results are in trec format.
 |EDRM\-CKNRM	|0\.3397|0\.4821|0\.3708|0\.4513|0\.3892|
 
 
+
+Results on ClueWeb09 and CluWeb12. All models are trained on Anchor-Doc pairs in ClueWeb.
+
+ClueWeb09:
+
+| Method | NDCG@20 | ERR@20 |
+| ------ | ------- | ------ |
+|Conv\-KNRM|0\.2893|0\.1521|
+|EDRM|0\.3110|0\.1693|
+
+ClueWeb12:
+
+| Method | NDCG@20 | ERR@20 |
+| ------ | ------- | ------ |
+|Conv\-KNRM|0\.1142|0\.0930|
+|EDRM|0\.1192|0\.0991|
+
 ## Citation
 
 Entity-Duet Neural Ranking: Understanding the Role of Knowledge Graph Semantics in Neural Information Retrieval. Zhenghao Liu, Chenyan Xiong, Maosong Sun and Zhiyuan Liu. In Proceedings of ACL. [Paper](http://aclweb.org/anthology/P18-1223)
