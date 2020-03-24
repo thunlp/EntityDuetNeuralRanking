@@ -1,5 +1,5 @@
 # Entity-Duet Neural Ranking Model
-There are source codes for Entity-Duet Neural Ranking Model (EDRM).
+There are source codes for Entity-Duet Neural Ranking Model (EDRM) [Paper](http://aclweb.org/anthology/P18-1223).
 
 
 ![model](https://github.com/thunlp/EntityDuetNeuralRanking/blob/master/model.png)
@@ -49,9 +49,14 @@ ClueWeb12:
 |EDRM|0\.1183|0\.0968|
 
 ## Citation
-
-Entity-Duet Neural Ranking: Understanding the Role of Knowledge Graph Semantics in Neural Information Retrieval. Zhenghao Liu, Chenyan Xiong, Maosong Sun and Zhiyuan Liu. In Proceedings of ACL. [Paper](http://aclweb.org/anthology/P18-1223)
-
+```
+@inproceedings{liu2018EntityDuetNR,
+  title={Entity-Duet Neural Ranking: Understanding the Role of Knowledge Graph Semantics in Neural Information Retrieval},
+  author={Zhenghao Liu and Chenyan Xiong and Maosong Sun and Zhiyuan Liu},
+  booktitle={Proceedings of ACL},
+  year={2018}
+}
+```
 
 ## Contact
 If you have questions, suggestions and bug reports, please email liuzhenghao0819@gmail.com.
