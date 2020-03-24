@@ -170,7 +170,7 @@ def main():
     opt.wrd_vocab_size = len(data['wrd2idx'])
     opt.ent_vocab_size = len(data['ent2idx'])
     opt.car_vocab_size = len(data['car2idx'])
-    embedding_init = get_ent_embedding("/data/disk2/private/liuzhenghao/neuralIR/sigir17-main/title.emb", opt.wrd_vocab_size)
+    embedding_init = get_ent_embedding("../data/title.emb", opt.wrd_vocab_size)
     opt.n_bins = len(opt.mu)
     print opt
 
