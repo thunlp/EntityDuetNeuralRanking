@@ -32,7 +32,7 @@ The ranking results. All results are in trec format.
 
 
 
-Results on ClueWeb09 and CluWeb12. All models are trained on Anchor-Doc pairs in ClueWeb.
+Results on ClueWeb09 and CluWeb12. All models are trained on Anchor-Doc pairs in ClueWeb. These results only leverage entity embedding and entity description.
 
 ClueWeb09:
 
