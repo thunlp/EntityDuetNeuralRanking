@@ -34,13 +34,12 @@ def eval_epoch(model, opt, validation_data, crit):
 
         total_loss += batch_loss
         counter += 1
-    return total_loss.data[0]/counter
+    return total_loss.item()/counter
 
 
 
 
 def test_epoch(model, test_data, file_name):
-    model.eval()
     out = open(file_name, "w")
     test_dict = dict()
     for batch in test_data:
@@ -87,39 +86,42 @@ def train(model, opt, crit, optimizer, training_data, valid_data, test_data):
             # update parameters
             optimizer.step()
             step += 1
-            total_loss += batch_loss.data[0]
+            total_loss += batch_loss.item()
             if step % opt.eval_step == 0:
-                valid_loss = eval_epoch(model, opt, valid_data, crit)
-                print(' Epoch %d step %d Training_loss %f Validation_loss %f' %(epoch_i, step, total_loss/opt.eval_step, valid_loss) )
-                file_name = "step_{}.trec".format(step)
-                test_epoch(model, test_data, file_name)
-                for test_file in ["test_same.qrel", "test_diff.qrel"]:
-                    for k in [1, 3, 10]:
-                        p = subprocess.Popen(
-                            '/data/disk2/private/liuzhenghao/neuralIR/test_data/gdeval.pl -c -k {0} /data/disk2/private/liuzhenghao/neuralIR/test_data/{1} {2}'.format(
-                                k, test_file, file_name),
-                            shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
-                        for line in p.stdout.readlines():
-                            print test_file, k, line
-                        retval = p.wait()
-                        sys.stdout.flush()
-                total_loss = 0
-                if opt.save_model:
-                    model_state_dict = model.state_dict()
-                    checkpoint = {
-                        'model': model_state_dict,
-                        'settings': opt,
-                        'epoch': epoch_i}
-                    if opt.save_mode == 'all':
-                        model_name = opt.save_model + '_step_{}.chkpt'.format(step)
-                        torch.save(checkpoint, model_name)
-                        print('    - [Info] The checkpoint file has been saved.')
-                    elif opt.save_mode == 'best':
-                        model_name = opt.save_model + '.chkpt'
-                        if valid_loss < min_valid_loss:
-                            min_valid_loss = valid_loss
+                with torch.no_grad():
+                    model.eval()
+                    valid_loss = eval_epoch(model, opt, valid_data, crit)
+                    print(' Epoch %d step %d Training_loss %f Validation_loss %f' %(epoch_i, step, total_loss/opt.eval_step, valid_loss) )
+                    file_name = "step_{}.trec".format(step)
+                    test_epoch(model, test_data, file_name)
+                    for test_file in ["test_same.qrel", "test_diff.qrel"]:
+                        for k in [1, 3, 10]:
+                            p = subprocess.Popen(
+                                './gdeval.pl -c -k {0} ../data/{1} {2}'.format(
+                                    k, test_file, file_name),
+                                shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+                            for line in p.stdout.readlines():
+                                print (test_file, k, line)
+                            retval = p.wait()
+                            sys.stdout.flush()
+                    total_loss = 0
+                    if opt.save_model:
+                        model_state_dict = model.state_dict()
+                        checkpoint = {
+                            'model': model_state_dict,
+                            'settings': opt,
+                            'epoch': epoch_i}
+                        if opt.save_mode == 'all':
+                            model_name = opt.save_model + '_step_{}.chkpt'.format(step)
                             torch.save(checkpoint, model_name)
-                            print('    - [Info] The checkpoint file has been updated.')
+                            print('    - [Info] The checkpoint file has been saved.')
+                        elif opt.save_mode == 'best':
+                            model_name = opt.save_model + '.chkpt'
+                            if valid_loss < min_valid_loss:
+                                min_valid_loss = valid_loss
+                                torch.save(checkpoint, model_name)
+                                print('    - [Info] The checkpoint file has been updated.')
+                    model.train()
 
 
 
@@ -134,7 +136,7 @@ def get_ent_embedding(path, vocab_size):
             items = line.split()
             tid = int(items[0])
             if tid > vocab_size:
-                print tid
+                print (tid)
                 continue
             vec = np.array([float(t) for t in items[1:]])
             emb[tid, :] = vec
@@ -147,6 +149,7 @@ def main():
     parser.add_argument('-data', required=True)
     parser.add_argument('-train', required=True)
     parser.add_argument('-valid', required=True)
+    parser.add_argument('-embed', required=True)
     parser.add_argument('-epoch', type=int, default=5)
     parser.add_argument('-test_data', required=True)
     parser.add_argument('-filter_size', type=int, default=300)
@@ -170,9 +173,9 @@ def main():
     opt.wrd_vocab_size = len(data['wrd2idx'])
     opt.ent_vocab_size = len(data['ent2idx'])
     opt.car_vocab_size = len(data['car2idx'])
-    embedding_init = get_ent_embedding("../data/title.emb", opt.wrd_vocab_size)
+    embedding_init = get_ent_embedding(opt.embed, opt.wrd_vocab_size)
     opt.n_bins = len(opt.mu)
-    print opt
+    print (opt)
 
     #========= Preparing DataLoader =========#
 

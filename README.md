@@ -33,7 +33,7 @@ The ranking results. All results are in trec format.
 
 
 Results on ClueWeb09 and CluWeb12. All models are trained on Anchor-Doc pairs in ClueWeb. These results only leverage entity embedding and entity description.
-
+For EDRM of English version, please refer to our [OpenMatch tookit](https://github.com/thunlp/OpenMatch)
 ClueWeb09:
 
 | Method | NDCG@20 | ERR@20 |

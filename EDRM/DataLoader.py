@@ -59,7 +59,7 @@ class DataLoader(object):
         de_neg = []
         with open(inst_file) as f:
             for line in f:
-                tokens = line.decode("utf8").strip().split("\t")
+                tokens = line.strip().split("\t")
                 if len(tokens) != 7:
                     error_sent_count += 1
                     continue
@@ -80,6 +80,7 @@ class DataLoader(object):
                     de_neg.append(self.cover_text2inte(tokens[5], self._ent2idx, self._ent_des_dict, self._ent_wrd_dict, 10))
                 if len(qw) >= self._batch_size:
                     yield qw, dw_pos, dw_neg, qe, de_pos, de_neg
+                    return
                     qw = []
                     qe = []
                     dw_pos = []
@@ -102,7 +103,7 @@ class DataLoader(object):
         mask_tensor = Variable(
                 torch.FloatTensor(mask), requires_grad = False)
         inst_data_tensor = Variable(
-                torch.LongTensor(inst_data), volatile=self._test)
+                torch.LongTensor(inst_data))
         if self._cuda:
             mask_tensor = mask_tensor.cuda()
             inst_data_tensor = inst_data_tensor.cuda()
@@ -125,11 +126,11 @@ class DataLoader(object):
         des_data = [self._ent_des[inst][:20] + [0] * (max(20 - len(self._ent_des[inst]), 0)) for inst in insts_tok]
         wrd_data = [self._ent_wrd[inst][:15] + [0] * (max(15 - len(self._ent_wrd[inst]), 0)) for inst in insts_wrd]
         insts_ids_tensor = Variable(
-            torch.LongTensor(insts_ids), volatile=self._test)
+            torch.LongTensor(insts_ids))
         insts_tok_tensor = Variable(
-            torch.LongTensor(des_data), volatile=self._test)
+            torch.LongTensor(des_data))
         insts_wrd_tensor = Variable(
-            torch.LongTensor(wrd_data), volatile=self._test)
+            torch.LongTensor(wrd_data))
         insts_msk_tensor = Variable(
             torch.FloatTensor(insts_msk), requires_grad=False)
         if self._cuda:

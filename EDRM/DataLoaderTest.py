@@ -89,11 +89,11 @@ class DataLoaderTest(object):
             des_data =[self._ent_des[inst][:20] + [0] * (max(20 - len(self._ent_des[inst]), 0)) for inst in insts_tok]
             wrd_data =[self._ent_wrd[inst][:10] + [0] * (max(10 - len(self._ent_wrd[inst]), 0)) for inst in insts_wrd]
             insts_ids_tensor = Variable(
-                    torch.LongTensor(insts_ids), volatile=self.test)
+                    torch.LongTensor(insts_ids))
             insts_tok_tensor = Variable(
-                    torch.LongTensor(des_data), volatile=self.test)
+                    torch.LongTensor(des_data))
             insts_wrd_tensor = Variable(
-                    torch.LongTensor(wrd_data), volatile=self.test)
+                    torch.LongTensor(wrd_data))
             insts_msk_tensor = Variable(
                     torch.FloatTensor(insts_msk), requires_grad = False)
             if self.cuda:

@@ -12,7 +12,7 @@ def read_vocab_idx(vocab_path):
 
     with open(vocab_path) as f:
         for line in f:
-            tokens = line.decode("utf8").strip("\n").split("\t")
+            tokens = line.strip("\n").split("\t")
             no = int(tokens[1])
             word2idx[tokens[0]] = no
 
@@ -25,7 +25,7 @@ def read_ent_des(inst_file):
     ent_des.append([0] * 20)
     with open(inst_file) as f:
         for step, line in enumerate(f):
-            tokens = line.decode("utf8").strip().split()
+            tokens = line.strip().split()
             ent_des_dict[tokens[0]] = step + 1
             ent_des.append([int(token) for token in tokens[1:]][:20])
     return ent_des, ent_des_dict
@@ -36,7 +36,7 @@ def read_ent_car(inst_file):
     ent_wrd.append([0] * 10)
     with open(inst_file) as f:
         for step, line in enumerate(f):
-            tokens = line.decode("utf8").strip().split()
+            tokens = line.strip().split()
             ent_wrd_dict[tokens[0]] = step + 1
             ent_wrd.append([int(token) for token in tokens[1:]][:10])
     return ent_wrd, ent_wrd_dict
@@ -74,6 +74,6 @@ def main():
     print('[Info] Finish.')
 
 if __name__ == '__main__':
-    reload(sys)
-    sys.setdefaultencoding('utf-8')
+    #reload(sys)
+    #sys.setdefaultencoding('utf-8')
     main()

@@ -51,7 +51,7 @@ def read_instances_from_file(inst_file, ids_file, ent2idx, ent_des_dict, ent_wrd
     with open(inst_file) as f1, open(ids_file) as f2:
         lines = zip(f1, f2)
         for line in lines:
-            tokens = line[0].decode("utf8").strip().split("\t")
+            tokens = line[0].strip().split("\t")
             if len(tokens) != 4:
                 error_sent_count += 1
                 continue
@@ -59,7 +59,7 @@ def read_instances_from_file(inst_file, ids_file, ent2idx, ent_des_dict, ent_wrd
             qe.append(cover_text2inte(tokens[2], ent2idx, ent_des_dict, ent_wrd_dict, 5))
             dw.append(cover_text2int(tokens[1]))
             de.append(cover_text2inte(tokens[3], ent2idx, ent_des_dict, ent_wrd_dict, 10))
-            tokens = line[1].decode("utf8").strip().split("\t")
+            tokens = line[1].strip().split("\t")
             n.append(tokens[2])
             i.append(tokens[0])
 
@@ -103,6 +103,6 @@ def main():
     print('[Info] Finish.')
 
 if __name__ == '__main__':
-    reload(sys)
-    sys.setdefaultencoding('utf-8')
+    #reload(sys)
+    #sys.setdefaultencoding('utf-8')
     main()
