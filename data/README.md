@@ -8,7 +8,8 @@ All data you can find on [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/d/1f57be
 
 ## Files Description
 * train_ent_des_expansion; valid_ent_des_expansion; test_ent_des_expansion
-    * query ids \t document ids \t qurey entities \t document entities
+    * query ids \t document1 ids \t document2 ids \t qurey entities \t document entities \t score
+    * if score > 0 document1 ids is the positive one, vice versa.
 * type2id
     * mapping of entity type and entity type id
 * word2id
@@ -23,6 +24,7 @@ All data you can find on [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/d/1f57be
     * original testing files
 * test_diff.qrel; test_same.qrel
     * Evaluation files
+    * These files are in ``evaluation`` data folder
 * wordemb.txt
 	* The pretrained word embedding provided by [K-NRM](http://www.cs.cmu.edu/afs/cs/user/cx/www/papers/K-NRM.pdf)
 * tag_result
