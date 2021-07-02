@@ -1,7 +1,8 @@
 # Data for Entity-Duet Neural Ranking Model
 
 ## Download Data
-All data you can find on [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/d/1f57be663018465ab0ad/). You should download them.
+All data you can find on [Tsinghua Cloud](https://cloud.tsinghua.edu.cn/d/1f57be663018465ab0ad/) or [Ali Cloud](
+https://thunlp.oss-cn-qingdao.aliyuncs.com/EDRM_data/edrm_data.zip). You should download them.
 
 ## Generate Training Files
 * run ``process.sh`` to generate files for training
